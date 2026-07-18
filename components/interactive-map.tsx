@@ -14,13 +14,13 @@ interface InteractiveMapProps {
 }
 
 // Custom Leaflet Icons styled with Tailwind classes (using L.divIcon to avoid broken asset URL issues)
-const createCustomIcon = (colorClass: string, glowClass: string) => {
+const createCustomIcon = (bgClass: string, pingBgClass: string, glowClass: string) => {
   return L.divIcon({
     className: "custom-div-icon",
     html: `
       <div class="relative w-8 h-8 flex items-center justify-center -translate-x-1/2 -translate-y-1/2">
-        <div class="absolute w-6 h-6 rounded-full bg-${colorClass}/20 animate-ping"></div>
-        <div class="w-4 h-4 rounded-full bg-${colorClass} border-2 border-slate-900 shadow-[0_0_12px_${glowClass}]"></div>
+        <div class="absolute w-6 h-6 rounded-full ${pingBgClass} animate-ping"></div>
+        <div class="w-4 h-4 rounded-full ${bgClass} border-2 border-slate-900 shadow-[0_0_12px_${glowClass}]"></div>
       </div>
     `,
     iconSize: [24, 24],
@@ -41,8 +41,8 @@ const createFoodIcon = () => {
   });
 };
 
-const originIcon = createCustomIcon("brand-cyan", "rgba(0,242,254,0.6)");
-const destIcon = createCustomIcon("brand-blue", "rgba(79,172,254,0.6)");
+const originIcon = createCustomIcon("bg-brand-cyan", "bg-brand-cyan/20", "rgba(0,242,254,0.6)");
+const destIcon = createCustomIcon("bg-brand-blue", "bg-brand-blue/20", "rgba(79,172,254,0.6)");
 const foodIcon = createFoodIcon();
 
 // Map controller to adjust view dynamically
