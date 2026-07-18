@@ -77,7 +77,7 @@ export interface FoodStop {
   cuisine: string;
   type: "restaurant" | "cafe" | "fastfood" | "bakery" | "bar";
   rating: number;
-  priceRange: "£" | "££" | "£££";
+  priceRange: "₹" | "₹₹" | "₹₹₹";
   estimatedCost: number;
   distanceFromRoute: number; // meters
   openNow: boolean;

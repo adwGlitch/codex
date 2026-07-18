@@ -8,7 +8,7 @@ import {
   Navigation,
   Calendar,
   Users,
-  PoundSterling,
+  IndianRupee,
   ArrowRightLeft,
   Loader2,
   X,
@@ -37,7 +37,7 @@ export default function PlannerPage() {
 
   // Journey config
   const [date, setDate] = useState("");
-  const [budget, setBudget] = useState(50);
+  const [budget, setBudget] = useState(5000);
   const [travellers, setTravellers] = useState(1);
   const [selectedPreferences, setSelectedPreferences] = useState<TravelPreference[]>([]);
   const [isSearching, setIsSearching] = useState(false);
@@ -259,23 +259,23 @@ export default function PlannerPage() {
             <div className="relative bg-black/40 border border-white/8 rounded-xl px-4 py-3">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-1">
-                  <PoundSterling className="w-4 h-4 text-brand-cyan" />
+                  <IndianRupee className="w-4 h-4 text-brand-cyan" />
                   <span className="text-lg font-bold text-white">{budget}</span>
                 </div>
                 <span className="text-xs text-slate-500">per person</span>
               </div>
               <input
                 type="range"
-                min={5}
-                max={500}
-                step={5}
+                min={500}
+                max={50000}
+                step={500}
                 value={budget}
                 onChange={(e) => setBudget(Number(e.target.value))}
                 className="w-full h-1.5 bg-white/10 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-brand-cyan [&::-webkit-slider-thumb]:shadow-[0_0_8px_rgba(0,242,254,0.6)] [&::-webkit-slider-track]:rounded-full"
               />
               <div className="flex justify-between text-[10px] text-slate-600 mt-1.5">
-                <span>£5</span>
-                <span>£500</span>
+                <span>₹500</span>
+                <span>₹50,000</span>
               </div>
             </div>
           </div>

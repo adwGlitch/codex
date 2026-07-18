@@ -72,7 +72,7 @@ export function RoutePanel() {
               </div>
             </div>
             <div className="text-right">
-              <div className="text-xl font-bold text-white">£{route.totalFare.toFixed(2)}</div>
+              <div className="text-xl font-bold text-white">₹{route.totalFare.toFixed(0)}</div>
               <div className="text-[10px] text-slate-500">estimated fare</div>
             </div>
           </div>

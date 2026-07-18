@@ -108,10 +108,10 @@ export default function DashboardPage() {
               <BarChart data={mockBudgetChartData} barGap={4}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
                 <XAxis dataKey="month" tick={{ fontSize: 11, fill: "#64748b" }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fontSize: 11, fill: "#64748b" }} axisLine={false} tickLine={false} unit="£" />
+                <YAxis tick={{ fontSize: 11, fill: "#64748b" }} axisLine={false} tickLine={false} unit="₹" />
                 <Tooltip
                   contentStyle={{ background: "#0d1117", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", color: "#fff", fontSize: "11px" }}
-                  formatter={(val, name) => [`£${Number(val ?? 0)}`, name === "spent" ? "Spent" : "Saved"]}
+                  formatter={(val, name) => [`₹${Number(val ?? 0).toLocaleString("en-IN")}`, name === "spent" ? "Spent" : "Saved"]}                  
                 />
                 <Bar dataKey="spent" fill="#4FACFE" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="saved" fill="#00F2FE" radius={[4, 4, 0, 0]} />
@@ -178,7 +178,7 @@ export default function DashboardPage() {
                     <p className="text-xs text-slate-500">{new Date(journey.date).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })} · {journey.duration} min</p>
                   </div>
                   <div className="text-right shrink-0">
-                    <div className="text-sm font-bold text-white">£{journey.cost.toFixed(2)}</div>
+                    <div className="text-sm font-bold text-white">₹{journey.cost.toLocaleString("en-IN")}</div>
                     <div className="text-[10px] text-emerald-400">{journey.co2} kg CO₂</div>
                   </div>
                 </motion.div>
@@ -228,7 +228,7 @@ export default function DashboardPage() {
             <Leaf className="w-8 h-8 text-emerald-400" />
           </div>
           <div className="flex-1 text-center sm:text-left">
-            <h3 className="font-display font-bold text-white text-lg">You&apos;ve saved 38.4 kg of CO₂ this year!</h3>
+            <h3 className="font-display font-bold text-white text-lg">You&apos;ve saved ₹41,098 in CO₂ costs this year!</h3>
             <p className="text-sm text-slate-400 mt-1">That&apos;s equivalent to planting 3 trees. Keep choosing eco-friendly routes to grow your impact.</p>
           </div>
           <div className="text-4xl shrink-0">🌳</div>

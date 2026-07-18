@@ -9,7 +9,7 @@ import {
   Utensils,
   ShieldCheck,
   Landmark,
-  PoundSterling,
+  IndianRupee,
   Leaf,
   Sparkles,
   ArrowLeft,
@@ -39,7 +39,7 @@ const tabs: Tab[] = [
   { id: "food", label: "Food", icon: Utensils, badge: 5 },
   { id: "essentials", label: "Essentials", icon: ShieldCheck, badge: 6 },
   { id: "attractions", label: "Sights", icon: Landmark, badge: 5 },
-  { id: "budget", label: "Budget", icon: PoundSterling },
+  { id: "budget", label: "Budget", icon: IndianRupee },
   { id: "carbon", label: "Carbon", icon: Leaf },
   { id: "ai", label: "AI Tips", icon: Sparkles, badge: 7 },
 ];
@@ -120,7 +120,7 @@ function JourneyContent() {
         <div className="flex gap-3 flex-wrap">
           {[
             { label: "Best time", value: "28 min", color: "text-brand-cyan" },
-            { label: "Best fare", value: "£5.40", color: "text-emerald-400" },
+            { label: "Best fare", value: "₹578", color: "text-emerald-400" },
             { label: "Temp", value: `${mockJourneyPlan.weather.current.temp}°C ${mockJourneyPlan.weather.current.icon}`, color: "text-brand-blue" },
           ].map((s) => (
             <div key={s.label} className="px-3 py-2 glass-card rounded-xl border border-white/5 text-center min-w-[80px]">

@@ -62,7 +62,7 @@ export function FoodPanel() {
                     {food.rating}
                   </div>
                 </div>
-                <p className="text-xs text-slate-500 mb-2">{food.cuisine} · {food.priceRange} · ~£{food.estimatedCost}/person</p>
+                <p className="text-xs text-slate-500 mb-2">{food.cuisine} · {food.priceRange} · ~₹{food.estimatedCost}/person</p>
                 <div className="flex flex-wrap gap-1 mb-2">
                   {food.highlights.map((h) => (
                     <span key={h} className="text-[10px] px-1.5 py-0.5 bg-white/5 text-slate-400 rounded-md border border-white/8">{h}</span>

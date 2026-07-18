@@ -43,7 +43,7 @@ export function AttractionsPanel() {
                   <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/20 font-semibold">Free Entry</span>
                 ) : (
                   <span className="flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20 font-semibold">
-                    <Ticket className="w-3 h-3" />£{attr.entryFee}
+                    <Ticket className="w-3 h-3" />₹{attr.entryFee}
                   </span>
                 )}
               </div>
